@@ -1,5 +1,6 @@
 @import "rouge-base16-dark";
 @import "default_colors";
+@import "toc";
 
 $body-background: $cod-grey !default;
 $body-foreground: $gallery !default;
@@ -220,6 +221,7 @@ hr {
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  margin-left: 10px;
 }
 
 .btn:hover {
@@ -265,4 +267,63 @@ a {
 
 #a-title {
   text-decoration: none;
+}
+
+// 个人新增部分
+
+//为了不让导航栏内加入标题，这里把标题的标签替换一下
+.p-title .p-desc {
+  margin: 0 0 20px;
+  font-weight: normal;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  color: $header;
+  letter-spacing: -0.03em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+  0 0 5px rgba(181, 232, 83, 0.1),
+  0 0 10px rgba(181, 232, 83, 0.1);
+}
+
+.p-title:before {
+  content: "./ ";
+  font-size: 24px;
+}
+
+.p-desc {
+  font-size: 18px;
+  font-weight: 300;
+  color: #666;
+}
+
+.p-title {
+  font-size: 30px;
+  line-height: 1.5;
+  margin: 0 0 0 -40px;
+  font-weight: bold;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  color: $conifer;//$header;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+  0 0 5px rgba(181, 232, 83, 0.1),
+  0 0 10px rgba(181, 232, 83, 0.1);
+  letter-spacing: -1px;
+  -webkit-font-smoothing: antialiased;
+  @include media-max-width($container-max-width) {
+    margin-left: 0;
+  }
+}
+
+// 头部导航栏
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// 侧边栏
+.sidebar{
+  width: auto;
+  position: fixed;
+  right: 5%;
+  top: 20px;
+  flex-grow: 2;
+  overflow-x: auto;
 }
